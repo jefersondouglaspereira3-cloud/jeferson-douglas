@@ -23,7 +23,13 @@
       type="image/webp"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preload"
+      href="styles.css?v=20260522-3"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="styles.css?v=20260522-3" /></noscript>
   </head>
   <body>
     <header class="site-header">
@@ -364,6 +370,6 @@
       <span>Marketing, vendas, produto e experiência do cliente.</span>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="script.js?v=20260522-3" defer></script>
   </body>
 </html>

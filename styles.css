@@ -22,10 +22,16 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
   min-width: 320px;
   background:
     linear-gradient(118deg, transparent 0 48%, rgba(0, 87, 255, 0.09) 48.15%, transparent 48.7%),
@@ -35,7 +41,7 @@ body {
     linear-gradient(180deg, #030407 0%, #071123 48%, #030407 100%);
   color: var(--text);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -161,6 +167,7 @@ picture {
 
 .hero {
   position: relative;
+  overflow: hidden;
   min-height: 92svh;
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(420px, 0.72fr);
@@ -741,7 +748,7 @@ h3 {
   grid-template-columns: 0.45fr 0.55fr;
   gap: clamp(30px, 6vw, 86px);
   align-items: center;
-  padding: clamp(56px, 8vw, 96px) max(24px, calc((100vw - var(--max)) / 2));
+  padding: clamp(56px, 8vw, 96px) max(24px, calc((100% - var(--max)) / 2));
   border-block: 1px solid var(--line);
   background:
     linear-gradient(90deg, rgba(0, 71, 255, 0.12), rgba(255, 106, 0, 0.06)),
@@ -937,7 +944,7 @@ h3 {
   }
 
   .hero-backdrop {
-    inset: 88px -20px auto;
+    inset: 88px 0 auto;
     height: 720px;
   }
 
