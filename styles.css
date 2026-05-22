@@ -34,7 +34,7 @@ body {
     radial-gradient(circle at 8% 28%, rgba(255, 90, 0, 0.12), transparent 24rem),
     linear-gradient(180deg, #030407 0%, #071123 48%, #030407 100%);
   color: var(--text);
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   overflow-x: clip;
 }
 
@@ -60,6 +60,10 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+picture {
+  display: block;
 }
 
 .site-header {
@@ -281,7 +285,7 @@ p {
 h1,
 h2,
 h3 {
-  font-family: "Space Grotesk", Inter, sans-serif;
+  font-family: inherit;
   letter-spacing: 0;
 }
 
@@ -345,7 +349,7 @@ h3 {
 .hero-stats dt {
   margin-bottom: 8px;
   color: var(--text);
-  font-family: "Space Grotesk", Inter, sans-serif;
+  font-family: inherit;
   font-size: clamp(1.45rem, 2.2vw, 2.2rem);
   font-weight: 850;
   line-height: 0.95;
@@ -451,7 +455,7 @@ h3 {
 }
 
 .profile-panel figcaption strong {
-  font-family: "Space Grotesk", Inter, sans-serif;
+  font-family: inherit;
   font-size: 1.45rem;
 }
 
@@ -653,7 +657,7 @@ h3 {
 
 .about-copy blockquote strong {
   color: var(--text);
-  font-family: "Space Grotesk", Inter, sans-serif;
+  font-family: inherit;
   font-size: clamp(1.35rem, 2.15vw, 2rem);
   line-height: 1.12;
 }
@@ -720,7 +724,7 @@ h3 {
 }
 
 .skills-close strong {
-  font-family: "Space Grotesk", Inter, sans-serif;
+  font-family: inherit;
   font-size: clamp(1.4rem, 2.5vw, 2.35rem);
   line-height: 1.08;
 }
@@ -827,7 +831,7 @@ h3 {
   border-radius: var(--radius);
   background: rgba(3, 4, 7, 0.42);
   color: var(--soft);
-  font-family: "Space Grotesk", Inter, sans-serif;
+  font-family: inherit;
   font-size: clamp(1rem, 1.25vw, 1.24rem);
   font-weight: 700;
   line-height: 1.18;
@@ -890,6 +894,11 @@ h3 {
   transform: translateY(0);
 }
 
+.hero [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
 @media (max-width: 980px) {
   .site-header {
     grid-template-columns: auto auto;
@@ -917,7 +926,8 @@ h3 {
 
   .hero {
     min-height: auto;
-    padding: 104px 0 40px;
+    gap: 26px;
+    padding: 96px 0 44px;
   }
 
   .hero::before {
@@ -936,13 +946,13 @@ h3 {
   }
 
   .hero-content {
-    order: 1;
+    order: 2;
     padding-bottom: 0;
   }
 
   .hero-showcase {
-    order: 2;
-    justify-self: start;
+    order: 1;
+    justify-self: center;
     width: min(100%, 460px);
   }
 
@@ -1017,13 +1027,15 @@ h3 {
   }
 
   .hero {
-    padding: 96px 0 36px;
+    gap: 20px;
+    padding: 86px 0 34px;
   }
 
   h1 {
-    max-width: 10.5ch;
-    font-size: clamp(2.25rem, 11vw, 3rem);
-    line-height: 1.04;
+    max-width: 11ch;
+    margin-bottom: 16px;
+    font-size: clamp(2.12rem, 10vw, 2.85rem);
+    line-height: 1.02;
   }
 
   h2 {
@@ -1033,8 +1045,12 @@ h3 {
 
   .hero-showcase {
     grid-template-columns: 1fr;
-    padding: 12px;
-    border-radius: 14px;
+    width: min(100%, 390px);
+    padding: 10px;
+    border-radius: 18px;
+    background:
+      linear-gradient(145deg, rgba(0, 87, 255, 0.2), rgba(255, 90, 0, 0.045) 42%, rgba(255, 255, 255, 0.035)),
+      rgba(4, 8, 18, 0.94);
   }
 
   .hero-showcase::after {
@@ -1045,41 +1061,65 @@ h3 {
 
   .profile-panel img {
     height: auto;
-    aspect-ratio: 2 / 3;
-    max-height: 430px;
+    aspect-ratio: 4 / 5;
+    max-height: 372px;
+    object-fit: cover;
+    object-position: center 18%;
   }
 
   .profile-panel figcaption {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    padding: 14px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 12px;
+  }
+
+  .profile-panel figcaption strong {
+    font-size: 1.12rem;
+  }
+
+  .profile-panel figcaption span {
+    font-size: 0.78rem;
   }
 
   .hero-actions {
     display: grid;
+    grid-template-columns: 1fr 0.72fr;
+    gap: 10px;
+    margin-top: 18px;
   }
 
   .hero-lead {
     max-width: 100%;
     font-size: 0.96rem;
-    line-height: 1.55;
+    line-height: 1.48;
   }
 
   .hero-stats {
-    grid-template-columns: 1fr;
-    margin-top: 22px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 18px;
+    border-color: rgba(255, 255, 255, 0.16);
   }
 
   .hero-stats div {
     min-height: auto;
-    padding: 14px 16px;
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0;
+  }
+
+  .hero-stats dt {
+    margin-bottom: 7px;
+    font-size: clamp(1.34rem, 7vw, 1.72rem);
+  }
+
+  .hero-stats dd {
+    font-size: 0.64rem;
+    line-height: 1.25;
   }
 
   .hero-stats div:last-child {
-    border-bottom: 0;
+    border-right: 0;
   }
 
   .button {

@@ -16,11 +16,12 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/jeferson-hero-new.jpg" />
     <meta name="theme-color" content="#02040a" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="image"
+      href="assets/jeferson-hero-new-720.webp"
+      type="image/webp"
+      fetchpriority="high"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -82,12 +83,24 @@
 
         <div class="hero-showcase" data-reveal>
           <figure class="profile-panel">
-            <img
-              src="assets/jeferson-hero-new.jpg"
-              alt="Jeferson Douglas em seu ambiente de trabalho"
-              fetchpriority="high"
-              decoding="async"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  assets/jeferson-hero-new-480.webp 480w,
+                  assets/jeferson-hero-new-720.webp 720w
+                "
+                sizes="(max-width: 640px) calc(100vw - 56px), 430px"
+              />
+              <img
+                src="assets/jeferson-hero-new.jpg"
+                alt="Jeferson Douglas em seu ambiente de trabalho"
+                width="720"
+                height="1080"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
             <figcaption>
               <div>
                 <strong>Jeferson Douglas</strong>
@@ -222,12 +235,24 @@
 
       <section class="proof-section" aria-labelledby="proof-title">
         <figure class="proof-media" data-reveal>
-          <img
-            src="assets/jeferson-content.jpg"
-            alt="Arte de conteúdo do Jeferson Douglas com chamada de foco, disciplina e resultados"
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                assets/jeferson-content-520.webp 520w,
+                assets/jeferson-content-720.webp 720w
+              "
+              sizes="(max-width: 980px) calc(100vw - 40px), 520px"
+            />
+            <img
+              src="assets/jeferson-content.jpg"
+              alt="Arte de conteúdo do Jeferson Douglas com chamada de foco, disciplina e resultados"
+              width="720"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </figure>
         <div class="proof-copy" data-reveal>
           <p class="eyebrow">Produto, interface e escala</p>
@@ -295,12 +320,24 @@
       </section>
 
       <section class="closing" id="contato">
-        <img
-          src="assets/jeferson-portrait.jpg"
-          alt="Jeferson Douglas em seu setup de trabalho"
-          loading="lazy"
-          decoding="async"
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              assets/jeferson-portrait-520.webp 520w,
+              assets/jeferson-portrait-720.webp 720w
+            "
+            sizes="(max-width: 980px) calc(100vw - 40px), 500px"
+          />
+          <img
+            src="assets/jeferson-portrait.jpg"
+            alt="Jeferson Douglas em seu setup de trabalho"
+            width="720"
+            height="960"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
         <div class="closing-copy" data-reveal>
           <p class="eyebrow">Contato</p>
           <h2>Sua comunicação não precisa de mais enfeite. Precisa ficar mais clara.</h2>
@@ -327,6 +364,6 @@
       <span>Marketing, vendas, produto e experiência do cliente.</span>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
