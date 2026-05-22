@@ -1,0 +1,8 @@
+.agents/
+.codex/
+preview-desktop.png
+preview-mobile.png
+server.js
+node_modules/
+.DS_Store
+Thumbs.db
