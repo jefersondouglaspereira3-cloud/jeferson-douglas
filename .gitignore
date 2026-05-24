@@ -4,5 +4,6 @@ preview-desktop.png
 preview-mobile.png
 server.js
 node_modules/
+assets/*.HEIC
 .DS_Store
 Thumbs.db
