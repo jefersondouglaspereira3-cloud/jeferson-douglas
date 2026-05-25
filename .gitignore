@@ -2,8 +2,12 @@
 .codex/
 preview-desktop.png
 preview-mobile.png
+preview-marcos.png
 server.js
 node_modules/
 assets/*.HEIC
+assets/novas/
+assets/jeferson-bastidores*.jpg
+assets/jeferson-bastidores*.webp
 .DS_Store
 Thumbs.db

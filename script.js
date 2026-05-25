@@ -46,3 +46,17 @@ const stickyCtaObserver = hero
 if (hero && stickyCtaObserver) {
   stickyCtaObserver.observe(hero);
 }
+
+let mouseFrame = null;
+
+const updateMouseGlow = (event) => {
+  if (window.matchMedia("(pointer: coarse)").matches) return;
+
+  if (mouseFrame) cancelAnimationFrame(mouseFrame);
+  mouseFrame = requestAnimationFrame(() => {
+    document.documentElement.style.setProperty("--mouse-x", `${event.clientX}px`);
+    document.documentElement.style.setProperty("--mouse-y", `${event.clientY}px`);
+  });
+};
+
+window.addEventListener("pointermove", updateMouseGlow, { passive: true });
