@@ -1831,11 +1831,15 @@ h3 {
   }
 
   .recognition-badge {
-    left: 18px;
-    right: 18px;
-    bottom: 18px;
-    max-width: none;
-  }
+  left: 18px;
+  right: 18px;
+  bottom: 24px;
+  max-width: none;
+}
+
+.recognition-copy {
+  padding-top: 18px;
+}
 
   .about-highlights {
     grid-template-columns: repeat(2, minmax(0, 1fr));
