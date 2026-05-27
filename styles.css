@@ -2075,6 +2075,17 @@ h3 {
     scroll-padding-top: 118px;
   }
 
+  body {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(0, 87, 255, 0.12), transparent 22rem),
+      linear-gradient(180deg, #030407 0%, #050810 48%, #030407 100%);
+  }
+
+  body::before,
+  body::after {
+    opacity: 0.12;
+  }
+
   .site-header {
     grid-template-columns: 34px minmax(0, 1fr);
     grid-template-areas:
@@ -2087,6 +2098,7 @@ h3 {
     width: calc(100dvw - 24px);
     max-width: calc(100dvw - 24px);
     overflow: hidden;
+    background: rgba(3, 4, 7, 0.9);
     transform: none;
   }
 
@@ -2102,18 +2114,30 @@ h3 {
     justify-self: end;
     width: auto;
     min-width: 0;
-    max-width: min(210px, calc(100dvw - 86px));
+    max-width: min(148px, calc(100dvw - 86px));
     min-height: 34px;
     padding: 0 11px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: 0;
+    gap: 8px;
+  }
+
+  .nav-cta::after {
+    content: "Instagram";
     font-size: 0.7rem;
   }
 
   .site-nav {
-    gap: 14px;
-    mask-image: linear-gradient(90deg, #000 0 82%, transparent);
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 6px;
+    mask-image: none;
+  }
+
+  .site-nav a {
+    font-size: 0.62rem;
   }
 
   .hero,
@@ -2130,6 +2154,14 @@ h3 {
     width: calc(100dvw - 32px);
     max-width: calc(100dvw - 32px);
     overflow-x: clip;
+  }
+
+  .hero-content,
+  .hero-lead,
+  .hero-stats,
+  .hero-actions {
+    width: 100%;
+    max-width: 100%;
   }
 
   .hero > *,
@@ -2158,20 +2190,40 @@ h3 {
   }
 
   .hero {
-    gap: 20px;
-    padding: 138px 0 44px;
+    gap: 18px;
+    padding: 128px 0 44px;
+    background: transparent;
   }
 
+  .hero::before,
   .hero::after {
-    opacity: 0.28;
-    inset: 98px -20px 0 28%;
+    display: none;
+  }
+
+  .hero-backdrop {
+    display: none;
+  }
+
+  .hero-content {
+    order: 1;
+    padding: 8px 4px 0;
+  }
+
+  .hero .eyebrow {
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 0.7rem;
+  }
+
+  .hero .eyebrow::before {
+    width: 44px;
   }
 
   h1 {
-    max-width: 16ch;
+    max-width: 13.2ch;
     margin-bottom: 16px;
-    font-size: clamp(2.18rem, 9.5vw, 2.72rem);
-    line-height: 1.04;
+    font-size: clamp(2.2rem, 9.4vw, 2.72rem);
+    line-height: 1.01;
     text-wrap: balance;
   }
 
@@ -2195,21 +2247,22 @@ h3 {
   }
 
   .hero-showcase {
+    order: 2;
     grid-template-columns: 1fr;
-    width: 100%;
-    max-width: 390px;
+    width: min(100%, 360px);
+    max-width: 360px;
+    margin-inline: auto;
     padding: 0;
-    border-radius: 0;
-    background:
-      radial-gradient(circle at 62% 36%, rgba(0, 87, 255, 0.24), transparent 16rem),
-      transparent;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.03);
     mask-image: none;
   }
 
   .hero-showcase::after {
-    top: 18px;
-    left: 18px;
-    width: 56px;
+    top: 12px;
+    left: 14px;
+    width: 58px;
+    height: 2px;
   }
 
   .hero-showcase::before {
@@ -2222,33 +2275,45 @@ h3 {
     mask-image: none;
   }
 
+  .profile-panel {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    background: rgba(3, 4, 7, 0.6);
+  }
+
+  .profile-panel picture {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
   .profile-panel::before {
-    opacity: 0.18;
+    display: none;
   }
 
   .profile-panel::after {
     background:
-      linear-gradient(90deg, rgba(3, 4, 7, 0.34), transparent 28%, transparent 72%, rgba(3, 4, 7, 0.34)),
-      linear-gradient(180deg, transparent 54%, rgba(3, 4, 7, 0.72) 100%);
+      linear-gradient(180deg, transparent 48%, rgba(3, 4, 7, 0.78) 100%),
+      linear-gradient(90deg, rgba(3, 4, 7, 0.24), transparent 34%, transparent 70%, rgba(3, 4, 7, 0.2));
   }
 
   .profile-panel img {
     height: auto;
-    aspect-ratio: 4 / 5;
-    max-height: 334px;
+    aspect-ratio: 4 / 4.65;
+    max-height: 312px;
     object-fit: cover;
-    object-position: center 18%;
+    object-position: center 15%;
   }
 
   .profile-panel figcaption {
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
     width: auto;
-    padding: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 11px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius);
-    background: rgba(3, 4, 7, 0.55);
+    background: rgba(3, 4, 7, 0.68);
     backdrop-filter: blur(14px);
   }
 
@@ -2257,23 +2322,27 @@ h3 {
   }
 
   .profile-panel figcaption strong {
-    font-size: 1.12rem;
+    font-size: 1rem;
   }
 
   .profile-panel figcaption span {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
   }
 
   .hero-actions {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
-    margin-top: 18px;
+    margin-top: 16px;
+  }
+
+  .hero-actions .button {
+    min-width: 0;
   }
 
   .hero-lead {
     max-width: 100%;
-    font-size: 0.96rem;
+    font-size: 1rem;
     line-height: 1.48;
     text-wrap: pretty;
   }
@@ -2281,24 +2350,30 @@ h3 {
   .hero-stats {
     grid-template-columns: 1fr;
     margin-top: 18px;
-    border-color: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.13);
+    background:
+      linear-gradient(90deg, rgba(8, 14, 23, 0.94), rgba(5, 7, 12, 0.96)),
+      rgba(3, 4, 7, 0.96);
   }
 
   .hero-stats div {
-    min-height: auto;
-    padding: 13px 14px;
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr);
+    align-items: center;
+    min-height: 62px;
+    padding: 12px 14px;
     border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .hero-stats dt {
-    margin-bottom: 7px;
-    font-size: clamp(1.34rem, 7vw, 1.72rem);
+    margin-bottom: 0;
+    font-size: clamp(1.28rem, 7vw, 1.65rem);
   }
 
   .hero-stats dd {
-    font-size: 0.72rem;
-    line-height: 1.25;
+    font-size: 0.64rem;
+    line-height: 1.22;
   }
 
   .hero-stats div:last-child {
@@ -2308,6 +2383,11 @@ h3 {
   .button {
     width: 100%;
     min-height: 52px;
+  }
+
+  .button.primary::after {
+    inset: 18px 24px -12px;
+    opacity: 0.65;
   }
 
   .closing .hero-actions .button {
