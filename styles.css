@@ -1373,17 +1373,6 @@ h3 {
     inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
-.official-note {
-  max-width: 570px;
-  margin-top: 24px;
-  padding: 15px 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--muted);
-  font-size: 0.86rem;
-  font-weight: 600;
-  line-height: 1.55;
-}
-
 .official-preview {
   position: relative;
   margin: 0;
@@ -2510,10 +2499,6 @@ h3 {
     margin-top: 10px;
     backdrop-filter: none;
     padding: 12px 14px;
-  }
-
-  .official-note {
-    display: none;
   }
 
   .recognition-media img {
