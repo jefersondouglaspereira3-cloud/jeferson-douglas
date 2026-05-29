@@ -861,7 +861,7 @@ h3 {
 .method,
 .content-section,
 .closing {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 148px;
 }
 
 .statement {
@@ -954,7 +954,6 @@ h3 {
 .about-highlights span,
 .skills-grid article,
 .values-grid article,
-.official-proof article,
 .recognition-grid article,
 .method-steps article,
 .content-destinations article {
@@ -971,7 +970,6 @@ h3 {
 .about-highlights span::after,
 .skills-grid article::after,
 .values-grid article::after,
-.official-proof article::after,
 .recognition-grid article::after,
 .method-steps article::after,
 .content-destinations article::after {
@@ -989,7 +987,6 @@ h3 {
 .about-highlights span:hover,
 .skills-grid article:hover,
 .values-grid article:hover,
-.official-proof article:hover,
 .recognition-grid article:hover,
 .method-steps article:hover,
 .content-destinations article:hover {
@@ -1001,7 +998,6 @@ h3 {
 .about-highlights span:hover::after,
 .skills-grid article:hover::after,
 .values-grid article:hover::after,
-.official-proof article:hover::after,
 .recognition-grid article:hover::after,
 .method-steps article:hover::after,
 .content-destinations article:hover::after {
@@ -1311,88 +1307,99 @@ h3 {
 
 .official-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(440px, 0.82fr);
-  gap: clamp(34px, 5vw, 70px);
+  grid-template-columns: minmax(0, 0.72fr) minmax(460px, 0.88fr);
+  gap: clamp(44px, 6vw, 86px);
   align-items: center;
-  padding: clamp(64px, 9vw, 112px) 0 clamp(52px, 7vw, 82px);
+  padding: clamp(54px, 7vw, 88px) 0 clamp(58px, 7vw, 84px);
   border-top: 1px solid var(--line);
 }
 
 .official-copy p {
-  max-width: 760px;
+  max-width: 650px;
 }
 
-.official-proof {
+.official-score-card {
+  width: min(100%, 500px);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 30px;
-}
-
-.official-proof article {
-  display: grid;
-  gap: 8px;
-  position: relative;
-  min-height: 148px;
-  padding: 17px;
-  overflow: hidden;
-  border: 1px solid var(--card-border);
+  grid-template-columns: minmax(132px, auto) 1fr;
+  gap: 6px 22px;
+  align-items: center;
+  margin: 24px 0 22px;
+  padding: 18px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: var(--radius);
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(0, 191, 255, 0.025)),
-    rgba(255, 255, 255, 0.035);
-  color: var(--soft);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055);
+    radial-gradient(circle at 0% 0%, rgba(0, 201, 107, 0.14), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.018));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 16px 40px rgba(0, 0, 0, 0.18);
 }
 
-.official-proof article::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto auto 0;
-  width: 58px;
-  height: 2px;
-  background: var(--orange);
-}
-
-.official-proof strong {
-  color: var(--text);
-  font-size: clamp(1.08rem, 1.45vw, 1.38rem);
+.official-score-card span {
+  grid-column: 2;
+  color: rgba(232, 237, 245, 0.72);
+  font-size: 0.72rem;
   font-weight: 900;
-  line-height: 1.08;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-.official-proof span {
-  color: var(--muted);
-  font-size: 0.88rem;
-  font-weight: 680;
-  line-height: 1.42;
+.official-score-card strong {
+  grid-row: 1 / span 2;
+  color: #72ffad;
+  font-size: clamp(2.45rem, 4vw, 3.45rem);
+  font-weight: 950;
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.official-score-card p {
+  grid-column: 2;
+  margin: 0;
+  color: var(--soft);
+  font-size: 0.9rem;
+  font-weight: 760;
+  line-height: 1.35;
 }
 
 .official-button {
-  width: fit-content;
-  min-width: 212px;
-  margin-top: 22px;
+  width: min(100%, 300px);
+  min-width: 0;
+  min-height: 56px;
+  margin-top: 24px;
   box-shadow:
-    0 18px 42px rgba(255, 90, 0, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 14px 30px rgba(255, 90, 0, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.official-note {
+  max-width: 570px;
+  margin-top: 24px;
+  padding: 15px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.55;
 }
 
 .official-preview {
   position: relative;
   margin: 0;
-  padding: 40px 12px 12px;
+  padding: 38px 12px 12px;
   justify-self: end;
   overflow: visible;
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.018)),
-    rgba(6, 12, 24, 0.86);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012)),
+    rgba(6, 12, 24, 0.88);
   box-shadow:
-    0 34px 100px rgba(0, 0, 0, 0.38),
-    0 0 70px rgba(0, 87, 255, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transform: perspective(1200px) rotateY(-3deg) rotateX(1deg);
+    0 30px 72px rgba(0, 0, 0, 0.32),
+    0 0 28px rgba(0, 87, 255, 0.038),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
+  transform: perspective(1200px) rotateY(-2deg) rotateX(0.6deg);
   transform-origin: center;
 }
 
@@ -1412,20 +1419,21 @@ h3 {
   inset: 18% -8% -14% 10%;
   z-index: -1;
   background:
-    radial-gradient(circle at 74% 18%, rgba(0, 191, 255, 0.2), transparent 26%),
-    radial-gradient(circle at 12% 86%, rgba(255, 90, 0, 0.16), transparent 28%);
-  filter: blur(20px);
+    radial-gradient(circle at 74% 18%, rgba(0, 191, 255, 0.07), transparent 26%),
+    radial-gradient(circle at 12% 86%, rgba(255, 90, 0, 0.055), transparent 28%);
+  filter: blur(24px);
 }
 
 .official-preview img {
   width: 100%;
-  height: auto;
-  max-height: 520px;
+  height: clamp(360px, 34vw, 470px);
+  max-height: none;
   object-fit: cover;
   object-position: top center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.25);
+  filter: brightness(0.72) saturate(0.82);
 }
 
 .official-browser {
@@ -1465,17 +1473,17 @@ h3 {
 .official-floating {
   position: absolute;
   z-index: 3;
-  width: min(250px, 44%);
-  padding: 13px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  width: min(170px, 34%);
+  padding: 10px 11px;
+  border: 1px solid rgba(0, 201, 107, 0.22);
   border-radius: var(--radius);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.082), rgba(255, 255, 255, 0.024)),
-    rgba(5, 10, 20, 0.82);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.058), rgba(255, 255, 255, 0.018)),
+    rgba(5, 10, 20, 0.88);
   box-shadow:
-    0 22px 62px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
+    0 16px 36px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
 }
 
 .official-floating span {
@@ -1489,21 +1497,21 @@ h3 {
   display: block;
   margin-top: 6px;
   color: var(--text);
-  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
   line-height: 1;
 }
 
 .official-floating p {
   margin: 6px 0 0;
   color: var(--soft);
-  font-size: 0.78rem;
-  font-weight: 720;
+  font-size: 0.72rem;
+  font-weight: 700;
   line-height: 1.35;
 }
 
 .official-floating-right {
-  right: -28px;
-  bottom: 34px;
+  right: -14px;
+  bottom: 30px;
 }
 
 .proof-section {
@@ -2186,7 +2194,7 @@ h3 {
   .method,
   .content-section,
   .closing {
-    scroll-margin-top: 118px;
+    scroll-margin-top: 150px;
   }
 
   .hero {
@@ -2455,23 +2463,35 @@ h3 {
     min-height: auto;
   }
 
-  .official-proof {
+  .official-score-card {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
+    justify-items: start;
+    margin: 18px 0;
+    padding: 17px 18px;
   }
 
-  .official-proof article {
-    min-height: auto;
-    padding: 16px;
+  .official-score-card span,
+  .official-score-card strong,
+  .official-score-card p {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .official-score-card strong {
+    font-size: 2.55rem;
   }
 
   .official-button {
     width: 100%;
     min-width: 0;
+    margin-top: 18px;
   }
 
   .official-preview img {
-    max-height: 320px;
+    height: 300px;
+    max-height: none;
+    filter: brightness(0.76) saturate(0.84);
   }
 
   .official-preview {
@@ -2489,6 +2509,11 @@ h3 {
     width: 100%;
     margin-top: 10px;
     backdrop-filter: none;
+    padding: 12px 14px;
+  }
+
+  .official-note {
+    display: none;
   }
 
   .recognition-media img {
